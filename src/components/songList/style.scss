@@ -1,0 +1,20 @@
+@use '../../mixins.scss' as *;
+
+.songs-list {
+    overflow: auto;
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+    font-size: 14px;
+    color: #858585;
+    th {
+        height: 30px;
+        padding-left: 8px;
+        border-right: 2px solid white;
+        background-color: #EEEEEE;
+        text-align: start;
+        &:first-child {
+            width: 40px;
+        }
+    }
+}
