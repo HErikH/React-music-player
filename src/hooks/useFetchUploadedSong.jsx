@@ -50,13 +50,11 @@ export default function useFetchUploadedSong(file) {
                 });
               });
               setMsg("Upload successful");
-              setFilteredSongs(false) // * Reset the filtered songs to initial state
-              setControlFilters({select: '', search: ''}) // * Reset filters to initial state
-              setProgress((prev) => {prev.started = false});
             } catch (error) {
               setMsg("Upload failed");
-              setFilteredSongs(false)
-              setControlFilters({select: '', search: ''})
+            } finally {
+              setFilteredSongs(false) // * Reset the filtered songs to initial state
+              setControlFilters({select: '', search: ''}) // * Reset filters to initial state
               setProgress((prev) => {prev.started = false});
             }
     }, [file])
